@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below."
+authors:
+  - family-names: "Yadav"
+    given-names: "Tanushree Ravindra Pratap"
+    orcid: "https://orcid.org/0009-0004-0411-255X"
+    affiliation: "Indian Institute of Science Education and Research (IISER) Bhopal"
+    email: "yadav23@iiserb.ac.in"
+title: "Competence Collapse in Code-Mixed Generation: Spectral Evidence and Mechanistic Recovery via Cross-Lingual Activation Steering"
+version: 1.0.0
+date-released: 2026-01-30
+url: "https://github.com/SinUbyCosU/competence-collapse"
+repository-code: "https://github.com/SinUbyCosU/competence-collapse"
+keywords:
+  - large language models
+  - code-switching
+  - multilingual NLP
+  - activation steering
+  - interpretability
+  - Hinglish
+  - low-resource languages
+license: MIT
+abstract: "As Large Language Models (LLMs) approach human-level reasoning in English, their performance in low-resource, code-mixed languages remains surprisingly brittle. We identify Competence Collapse, a distinct pathology where models capable of complex reasoning in English exhibit severe utility degradation when prompted in Hinglish (Hindi-English). We quantify this as a Service Gap, observing a statistically significant decline in instructional quality (∆D ≈ −11.3%, p < 0.001) across 9 diverse architectures. To bridge this gap, we propose Cross-Lingual Activation Steering (CLAS), an inference-time intervention that recovers utility by ∆D = +2.22 (d = 0.60) while preserving code-mixed fidelity and reinforcing safety protocols."

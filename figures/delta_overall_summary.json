@@ -1,0 +1,30 @@
+[
+  {
+    "index":0,
+    "metric":"assertiveness",
+    "delta_mean":-0.5428830052,
+    "delta_std":1.8926978208,
+    "count":4419
+  },
+  {
+    "index":1,
+    "metric":"complexity",
+    "delta_mean":-0.4127630686,
+    "delta_std":2.0736288626,
+    "count":4419
+  },
+  {
+    "index":2,
+    "metric":"emotional_distance",
+    "delta_mean":0.6911065852,
+    "delta_std":2.5958911926,
+    "count":4419
+  },
+  {
+    "index":3,
+    "metric":"instructional_density",
+    "delta_mean":-1.5836162028,
+    "delta_std":3.3955958285,
+    "count":4419
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "cosine_heatmap": "analysis_output/figures/figure_cosine_similarity_heatmap.png",
+  "activation_pca": "analysis_output/figures/figure_activation_pca.png",
+  "activation_pca_multidim_first": "analysis_output/figures/figure_activation_pca_multidim_nous_hermes_mistral.png",
+  "cosine_lines": "analysis_output/figures/figure_cosine_similarity_lines.png",
+  "gap_magnitude": "analysis_output/figures/figure_gap_magnitude_lines.png"
+}

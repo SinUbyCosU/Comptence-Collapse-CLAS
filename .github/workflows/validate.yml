@@ -1,0 +1,140 @@
+name: Validate Data and Documentation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Verify data files exist
+      run: |
+        python -c "
+        import os
+        import sys
+        
+        # Check critical files
+        required_files = [
+            'README.md',
+            'LICENSE',
+            'CITATION.cff',
+            'DATA.md',
+            'REPRODUCE.md',
+            'requirements.txt',
+            'clas_ablation_results.jsonl',
+            'figures/diagnostics_summary.json'
+        ]
+        
+        missing = []
+        for file in required_files:
+            if not os.path.exists(file):
+                missing.append(file)
+        
+        if missing:
+            print(f'❌ Missing files: {missing}')
+            sys.exit(1)
+        else:
+            print('✅ All critical files present')
+        "
+    
+    - name: Validate JSON files
+      run: |
+        python -c "
+        import json
+        import glob
+        import sys
+        
+        json_files = glob.glob('**/*.json', recursive=True) + glob.glob('**/*.jsonl', recursive=True)
+        errors = []
+        
+        for file in json_files:
+            try:
+                if file.endswith('.jsonl'):
+                    with open(file, 'r') as f:
+                        for line_num, line in enumerate(f, 1):
+                            json.loads(line)
+                else:
+                    with open(file, 'r') as f:
+                        json.load(f)
+                print(f'✅ {file}')
+            except Exception as e:
+                errors.append(f'{file}: {e}')
+                print(f'❌ {file}: {e}')
+        
+        if errors:
+            sys.exit(1)
+        else:
+            print(f'✅ All {len(json_files)} JSON files valid')
+        "
+    
+    - name: Check README links
+      run: |
+        python -c "
+        import re
+        
+        with open('README.md', 'r') as f:
+            content = f.read()
+        
+        # Find all local links
+        links = re.findall(r'\[([^\]]+)\]\(([^)]+)\)', content)
+        
+        broken = []
+        for text, link in links:
+            if not link.startswith('http') and not link.startswith('#'):
+                import os
+                if not os.path.exists(link):
+                    broken.append(f'{text} -> {link}')
+        
+        if broken:
+            print('❌ Broken links found:')
+            for link in broken:
+                print(f'  - {link}')
+        else:
+            print('✅ All README links valid')
+        "
+    
+    - name: Verify steering vectors
+      run: |
+        python -c "
+        import torch
+        import glob
+        import sys
+        
+        vectors = glob.glob('vectors/pc1_layer_*.pt')
+        
+        if len(vectors) < 10:
+            print(f'⚠️  Warning: Only {len(vectors)} steering vectors found')
+        
+        for vec_file in vectors[:5]:  # Check first 5
+            try:
+                vec = torch.load(vec_file, map_location='cpu')
+                print(f'✅ {vec_file}: shape {vec.shape}, norm {torch.norm(vec).item():.4f}')
+            except Exception as e:
+                print(f'❌ {vec_file}: {e}')
+                sys.exit(1)
+        
+        print(f'✅ Verified {len(vectors)} steering vectors')
+        "
+    
+    - name: Summary
+      if: always()
+      run: |
+        echo "## Validation Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "✅ Data validation completed" >> $GITHUB_STEP_SUMMARY
