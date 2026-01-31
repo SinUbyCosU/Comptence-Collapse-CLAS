@@ -94,11 +94,11 @@ A lightweight, inference-time intervention that:
 
 ## Quick Links
 
-- 📄 **[Full Paper](reports/CLAS_600_Report.md)** - Detailed experimental report
-- 🔬 **[Reproduction Guide](REPRODUCE.md)** - Step-by-step instructions
-- 📊 **[Data Documentation](DATA.md)** - Data availability and usage
-- 📜 **[Citation](CITATION.cff)** - BibTeX and citation metadata
-- ⚖️ **[License](LICENSE)** - MIT License
+-  **[Full Paper](reports/CLAS_600_Report.md)** - Detailed experimental report
+-  **[Reproduction Guide](REPRODUCE.md)** - Step-by-step instructions
+-  **[Data Documentation](DATA.md)** - Data availability and usage
+-  **[Citation](CITATION.cff)** - BibTeX and citation metadata
+-  **[License](LICENSE)** - MIT License
 
 ## Installation
 
