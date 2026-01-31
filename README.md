@@ -122,8 +122,8 @@ pip install -r requirements.txt
 - 20GB storage
 
 **Data Access**:
-- 📁 **This Repository**: Documentation, code, and analysis scripts
-- 📦 **Complete Dataset**: [github.com/SinUbyCosU/competence-collapse](https://github.com/SinUbyCosU/competence-collapse) (11 MB)
+-  **This Repository**: Documentation, code, and analysis scripts
+-  **Complete Dataset**: [github.com/SinUbyCosU/competence-collapse](https://github.com/SinUbyCosU/competence-collapse) (11 MB)
   - Includes: steering vectors (.pt), activation data (.npy), full results (.jsonl)
 
 ## Quick Start
@@ -333,8 +333,8 @@ All experimental data, human annotations, and pre-computed steering vectors are 
 - Version information
 
 **Repository Structure**:
-- 📄 This repository: Publication-ready code and documentation (~500 KB)
-- 📦 [Data repository](https://github.com/SinUbyCosU/competence-collapse): Complete experimental data (~11 MB)
+-  This repository: Publication-ready code and documentation (~500 KB)
+-  [Data repository](https://github.com/SinUbyCosU/competence-collapse): Complete experimental data (~11 MB)
 
 ## Contributing
 
@@ -349,8 +349,8 @@ We welcome contributions! Please:
 
 **Tanushree Ravindra Pratap Yadav**  
 Indian Institute of Science Education and Research (IISER) Bhopal  
-📧 Email: yadav23@iiserb.ac.in  
-🔗 ORCID: [0009-0004-0411-255X](https://orcid.org/0009-0004-0411-255X)
+ Email: yadav23@iiserb.ac.in  
+ ORCID: [0009-0004-0411-255X](https://orcid.org/0009-0004-0411-255X)
 
 ## License
 
