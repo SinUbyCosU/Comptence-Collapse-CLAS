@@ -8,7 +8,6 @@
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 
 > **Author**: Tanushree Ravindra Pratap Yadav  
-> **Institution**: Indian Institute of Science Education and Research (IISER) Bhopal  
 > **Contact**: yadav23@iiserb.ac.in  
 > **ORCID**: [0009-0004-0411-255X](https://orcid.org/0009-0004-0411-255X)
 
